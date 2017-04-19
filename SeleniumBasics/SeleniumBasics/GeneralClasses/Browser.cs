@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Text;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
+
 
 /// <summary>
 /// Class that has basics driver and browse functions, like initialize driver, open a browser, maximize, etc.
