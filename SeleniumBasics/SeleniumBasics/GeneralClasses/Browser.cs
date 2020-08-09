@@ -12,12 +12,11 @@ namespace SeleniumBasics.GeneralClasses
 {
     class Browser
     {
-                
-        #region public variables
 
+        #region public variables
+        private static Browser browserInstance;
         public RemoteWebDriver driver;        
-        //Starter URL    
-        public const string BaseUrl = "www.google.com";
+        
         public static string relativePath = System.IO.Directory.GetCurrentDirectory();
 
         #endregion
@@ -44,6 +43,21 @@ namespace SeleniumBasics.GeneralClasses
         private void MaximizeBrowser()
         {
             driver.Manage().Window.Maximize();
+        }
+
+        private Browser()
+        {
+            InitializeChrome();
+            //InitializeFirefox();
+        }
+
+        public static Browser InitializeBrowser()
+        {
+            if (browserInstance == null)
+            {
+                browserInstance = new Browser();
+            }
+            return browserInstance;
         }
 
         /// <summary>
